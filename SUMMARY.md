@@ -4,7 +4,7 @@
 
 This is the summary of my book.
 
-* [Why](first.md)
+* [Why](why.md)
 * [How to](how-to.md)
 * [Principles](principles.md)
 * [Deep](deep.md)

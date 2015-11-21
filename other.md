@@ -1,7 +1,5 @@
 #Other
 
-===
-
 BDD
 
 Integration test
