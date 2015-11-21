@@ -4,8 +4,8 @@
 
 This is the summary of my book.
 
-* [why](first.md)
-* [how to](how-to.md)
+* [Why](first.md)
+* [How to](how-to.md)
 * [Principles](principles.md)
 * [Deep](deep.md)
 * [Rethinking](rethinking.md)
