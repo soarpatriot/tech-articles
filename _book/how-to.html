@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>why | Unit test and more than unit test</title>
+        <title>how to | Unit test and more than unit test</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.5.2">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="./how-to.html" />
+    <link rel="next" href="./principles.html" />
     
     
-    <link rel="prev" href="./index.html" />
+    <link rel="prev" href="./first.html" />
     
 
         
@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="1" data-chapter-title="why" data-filepath="first.md" data-basepath="." data-revision="Sat Nov 21 2015 12:04:21 GMT+0800 (CST)">
+    <div class="book" data-level="2" data-chapter-title="how to" data-filepath="how-to.md" data-basepath="." data-revision="Sat Nov 21 2015 12:04:21 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -76,7 +76,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1" data-path="first.html">
+        <li class="chapter " data-level="1" data-path="first.html">
             
                 
                     <a href="./first.html">
@@ -91,7 +91,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2" data-path="how-to.html">
+        <li class="chapter active" data-level="2" data-path="how-to.html">
             
                 
                     <a href="./how-to.html">
@@ -199,22 +199,20 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="why-should-we-start-to-use-unit-test">Why should we start to use unit test?</h1>
-<hr>
-<ol>
-<li><p>For assure, function can run?</p>
-</li>
-<li><p>For dev design, unit tests drive the design </p>
-</li>
-<li><p>For quick change, automated regression for refactoring and new enhancements. </p>
-</li>
-<li><p>Code coverage, lower change of containing bugs than a low code coverage </p>
-</li>
-<li><p>For make complicated thing simple and keep forword</p>
-</li>
-<li><p>Code quality </p>
-</li>
-</ol>
+                        <h1 id="how-can-we-do-it-in-java">How can we do it in java?</h1>
+<p>Unit test framework in java</p>
+<p>SpryTest Jtest Junit TestNG</p>
+<p>First JUnit test</p>
+<pre><code>asssertTrue  assertFalse   assertNull assertNotNull assertEquals assertSame assertNotSame
+</code></pre><pre><code>assertThat(calculatedTax, is(not(thirtyPercent)) ); assertThat(phdStudentList, hasItem(DrJohn) ); assertThat(manchesterUnitedClub, both( is(EPL_Champion)).and(is(UEFA_Champions_League_Champion)) );
+</code></pre><pre><code>@BeforeClass @AfertClass @Before @After
+</code></pre><pre><code>@Test(expected=RuntimeException.class) 
+@Test(timeout=10) @RunWith(Theories.class)    @Rule     @Category
+</code></pre><pre><code>@RunWith 
+@RunWith(Suite.class) 
+
+@RunWith(Parameterized.class)
+</code></pre><p>Remove you System.out.println</p>
 
                     
                     </section>
@@ -225,10 +223,10 @@
         </div>
 
         
-        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="./first.html" class="navigation navigation-prev " aria-label="Previous page: why"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./how-to.html" class="navigation navigation-next " aria-label="Next page: how to"><i class="fa fa-angle-right"></i></a>
+        <a href="./principles.html" class="navigation navigation-next " aria-label="Next page: Principles"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
