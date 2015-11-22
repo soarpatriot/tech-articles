@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Rules | Unit test and more than unit test</title>
+        <title>Assume | Unit test and more than unit test</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.5.2">
@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="2.6" data-chapter-title="Rules" data-filepath="how/rules.md" data-basepath=".." data-revision="Sun Nov 22 2015 20:49:04 GMT+0800 (CST)">
+    <div class="book" data-level="2.6" data-chapter-title="Assume" data-filepath="how/assume.md" data-basepath=".." data-revision="Sun Nov 22 2015 23:16:34 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -182,16 +182,16 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.6" data-path="how/rules.html">
+        <li class="chapter active" data-level="2.6" data-path="how/assume.html">
             
                 
-                    <a href="../how/rules.html">
+                    <a href="../how/assume.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>2.6.</b>
                         
-                        Rules
+                        Assume
                     </a>
             
             
@@ -472,10 +472,27 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h3 id="rules">Rules</h3>
-<h5 id="rules-allow-very-flexible-addition-or-redefinition-of-the-behavior-of-each-test-method-in-a-test-class-rules-are-like-aspect-oriented-programming-aop-we-can-do-useful-things-before-andor-after-the-actual-test-execution">Rules allow very flexible addition or redefinition of the behavior of each test method in a test class. Rules are like Aspect Oriented Programming (AOP); we can do useful things before and/or after the actual test execution.</h5>
-<pre><code>@Test(expected=RuntimeException.class) 
-@Test(timeout=10)
+                        <h3 id="assume">Assume</h3>
+<p>Before executing a test, we can check our assumption using the assumeXXX methods. If our assumption fails, then the assumeXXX methods throw AssumptionViolatedException, and the JUnit runner ignores the tests with failing assumptions.</p>
+<pre><code>import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assume.assumeTrue;
+
+/**
+ * Created by liuhaibao on 15/11/22.
+ */
+public class Assumption {
+
+    boolean running = false;
+
+    @Test
+    public void test_when_running() throws Exception{
+        boolean aa = true;
+        assumeTrue(running);
+        assertFalse(aa);
+    }
+}
 </code></pre>
                     
                     </section>

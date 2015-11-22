@@ -1,16 +1,16 @@
 #Principles in unit test
 
-Unit test is unit test
+1. Unit test is unit test
 
-Order independent and isolated
+2. Order independent and isolated
 
-Do not test the test
+3. Do not test the test
 
-Quick: quick feedback
+4. Quick: quick feedback
 
-Trouble-free setup and run:  easy to setup and run
+5. Trouble-free setup and run:  easy to setup and run
 
-Effortless execution  finished in a short time
+6. Effortless execution  finished in a short time
 
-Meaningful(business logic)
+7. Meaningful(business logic)
 

@@ -11,7 +11,7 @@ This is the summary of my book.
     * [Assert types](how/assert.md)
     * [Exception](how/exceptions.md)
     * [Setups](how/setup.md)
-    * [Rules](how/rules.md)
+    * [Assume](how/assume.md)
     * [Runwith](how/runwith.md)
     * [Do](how/do.md)
 * [Principles](principles.md)

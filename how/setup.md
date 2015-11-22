@@ -3,10 +3,12 @@
 
 #####Do something before or after a test or class
 
-* @BeforeClass 
-* @AfertClass 
-* @Before 
-* @After
+@BeforeClass 
+@AfertClass 
+@Before 
+@After
+
+
 
 ```
 import org.junit.After;

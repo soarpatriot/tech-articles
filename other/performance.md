@@ -8,7 +8,7 @@ Lots of tools can be used for performance test
 
 2. Apache AB
 
-3. Apache JMetel
+3. Apache JMeter
 
 4. Siege
 
