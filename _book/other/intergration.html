@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Test framework form java | Unit test and more than unit test</title>
+        <title>Integration | Unit test and more than unit test</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.5.2">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../how/first-test.html" />
+    <link rel="next" href="../other/performance.html" />
     
     
-    <link rel="prev" href="../how-to.html" />
+    <link rel="prev" href="../other/bdd.html" />
     
 
         
@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="2.1" data-chapter-title="Test framework form java" data-filepath="how/framework.md" data-basepath=".." data-revision="Sun Nov 22 2015 20:49:04 GMT+0800 (CST)">
+    <div class="book" data-level="6.2" data-chapter-title="Integration" data-filepath="other/intergration.md" data-basepath=".." data-revision="Sun Nov 22 2015 20:49:04 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -107,7 +107,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1" data-path="how/framework.html">
+        <li class="chapter " data-level="2.1" data-path="how/framework.html">
             
                 
                     <a href="../how/framework.html">
@@ -374,7 +374,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="other/intergration.html">
+        <li class="chapter active" data-level="6.2" data-path="other/intergration.html">
             
                 
                     <a href="../other/intergration.html">
@@ -472,22 +472,72 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h3 id="unit-test-framework-in-java">Unit test framework in java</h3>
-<h5 id="basic">Basic</h5>
-<ol>
-<li>SpryTest </li>
-<li>Jtest </li>
-<li>JUnit </li>
-<li>TestNG</li>
-</ol>
-<p><br>
-<strong>JUnit is the most popular one, nevertheless, you should try others </strong></p>
-<h5 id="more-advanced">More advanced</h5>
-<ol>
-<li>Hamcrest</li>
-<li>Mockito</li>
-</ol>
+                        <h3 id="integration-test">Integration test</h3>
+<p><strong>Example</strong></p>
+<pre><code>package com.xiaojiuwo.integrations;
 
+import com.xiaojiuwo.Application;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.IntegrationTest;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.TestRestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.web.client.RestTemplate;
+
+import java.net.URL;
+
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
+
+/**
+ * Created by liuhaibao on 15/10/22.
+ */
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = Application.class)
+@WebAppConfiguration
+@IntegrationTest({&quot;server.port=0&quot;})
+public class StationsControllerIntegration {
+
+    @Value(&quot;${local.server.port}&quot;)
+    private int port;
+
+    private String base;
+    private String stationPointsUrl;
+    private RestTemplate template;
+
+    @Before
+    public void setUp() throws Exception {
+        this.base = &quot;http://localhost:&quot; + port + &quot;/stations&quot;;
+        template = new TestRestTemplate();
+    }
+
+
+    @Test
+    public void stations() throws Exception {
+
+        ResponseEntity&lt;String&gt; response = template.getForEntity(this.base, String.class);
+        response.getStatusCode();
+        assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
+    }
+
+    @Test
+    public void station_points() throws Exception {
+        stationPointsUrl = this.base+ &quot;/1&quot;+&quot;/points&quot;;
+
+        ResponseEntity&lt;String&gt; response = template.getForEntity(stationPointsUrl, String.class);
+        response.getStatusCode();
+        assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
+    }
+}
+</code></pre>
                     
                     </section>
                 
@@ -497,10 +547,10 @@
         </div>
 
         
-        <a href="../how-to.html" class="navigation navigation-prev " aria-label="Previous page: How to"><i class="fa fa-angle-left"></i></a>
+        <a href="../other/bdd.html" class="navigation navigation-prev " aria-label="Previous page: BDD"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../how/first-test.html" class="navigation navigation-next " aria-label="Next page: First test"><i class="fa fa-angle-right"></i></a>
+        <a href="../other/performance.html" class="navigation navigation-next " aria-label="Next page: Performace"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

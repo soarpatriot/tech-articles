@@ -1,4 +1,7 @@
 ###First JUnit test
+
+#####a normal class and it's method with annotation @Test can be thought as a Unit test class
+
 ```
 public boolean isCreatedDateGt(Date boundary){
     return this.createdDate.getTime() > boundary.getTime()? true: false;

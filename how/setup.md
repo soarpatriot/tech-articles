@@ -1,12 +1,12 @@
 
 ###Setups
 
-```
-@BeforeClass 
-@AfertClass 
-@Before 
-@After
-```
+#####Do something before or after a test or class
+
+* @BeforeClass 
+* @AfertClass 
+* @Before 
+* @After
 
 ```
 import org.junit.After;
@@ -41,5 +41,24 @@ public class SanityTest {
       public static void afterClass() {
         System.out.println("***After Class is invoked");
     } 
+}
+```
+
+#####Ignore a test
+
+Just add @Ignore on a method
+
+```
+public class Assumption {
+
+    boolean running = false;
+
+    @Ignore 
+    @Test
+    public void test_when_running() throws Exception{
+        boolean aa = true;
+        assumeTrue(running);
+        assertFalse(aa);
+    }
 }
 ```

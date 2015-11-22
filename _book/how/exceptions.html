@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Test framework form java | Unit test and more than unit test</title>
+        <title>Exception | Unit test and more than unit test</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.5.2">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../how/first-test.html" />
+    <link rel="next" href="../how/setup.html" />
     
     
-    <link rel="prev" href="../how-to.html" />
+    <link rel="prev" href="../how/assert.html" />
     
 
         
@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="2.1" data-chapter-title="Test framework form java" data-filepath="how/framework.md" data-basepath=".." data-revision="Sun Nov 22 2015 20:49:04 GMT+0800 (CST)">
+    <div class="book" data-level="2.4" data-chapter-title="Exception" data-filepath="how/exceptions.md" data-basepath=".." data-revision="Sun Nov 22 2015 20:49:04 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -107,7 +107,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1" data-path="how/framework.html">
+        <li class="chapter " data-level="2.1" data-path="how/framework.html">
             
                 
                     <a href="../how/framework.html">
@@ -152,7 +152,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="how/exceptions.html">
+        <li class="chapter active" data-level="2.4" data-path="how/exceptions.html">
             
                 
                     <a href="../how/exceptions.html">
@@ -472,22 +472,29 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h3 id="unit-test-framework-in-java">Unit test framework in java</h3>
-<h5 id="basic">Basic</h5>
-<ol>
-<li>SpryTest </li>
-<li>Jtest </li>
-<li>JUnit </li>
-<li>TestNG</li>
-</ol>
-<p><br>
-<strong>JUnit is the most popular one, nevertheless, you should try others </strong></p>
-<h5 id="more-advanced">More advanced</h5>
-<ol>
-<li>Hamcrest</li>
-<li>Mockito</li>
-</ol>
+                        <h3 id="exceptions-test">Exceptions test</h3>
+<h5 id="time-out">Time out</h5>
+<p>@Test(timeout=10)  millisecond</p>
+<pre><code>package com.xiaojiuwo.demo;
 
+import org.junit.Test;
+
+/**
+ * Created by liuhaibao on 15/11/22.
+ */
+public class TimeOutTest {
+    @Test(timeout=2000)
+    public void sleep_3_seconds() throws Exception {
+        Thread.sleep(3000);
+    }
+}
+</code></pre><h5 id="runtimeexception">RuntimeException</h5>
+<p>@Test(expected=RuntimeException.class) </p>
+<pre><code>@Test(expected=RuntimeException.class)
+public void exception() {
+    throw new RuntimeException();
+}
+</code></pre>
                     
                     </section>
                 
@@ -497,10 +504,10 @@
         </div>
 
         
-        <a href="../how-to.html" class="navigation navigation-prev " aria-label="Previous page: How to"><i class="fa fa-angle-left"></i></a>
+        <a href="../how/assert.html" class="navigation navigation-prev " aria-label="Previous page: Assert types"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../how/first-test.html" class="navigation navigation-next " aria-label="Next page: First test"><i class="fa fa-angle-right"></i></a>
+        <a href="../how/setup.html" class="navigation navigation-next " aria-label="Next page: Setups"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

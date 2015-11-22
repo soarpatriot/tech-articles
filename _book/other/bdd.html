@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Test framework form java | Unit test and more than unit test</title>
+        <title>BDD | Unit test and more than unit test</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.5.2">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../how/first-test.html" />
+    <link rel="next" href="../other/intergration.html" />
     
     
-    <link rel="prev" href="../how-to.html" />
+    <link rel="prev" href="../other.html" />
     
 
         
@@ -48,7 +48,7 @@
     <body>
         
         
-    <div class="book" data-level="2.1" data-chapter-title="Test framework form java" data-filepath="how/framework.md" data-basepath=".." data-revision="Sun Nov 22 2015 20:49:04 GMT+0800 (CST)">
+    <div class="book" data-level="6.1" data-chapter-title="BDD" data-filepath="other/bdd.md" data-basepath=".." data-revision="Sun Nov 22 2015 20:49:04 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -107,7 +107,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1" data-path="how/framework.html">
+        <li class="chapter " data-level="2.1" data-path="how/framework.html">
             
                 
                     <a href="../how/framework.html">
@@ -359,7 +359,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="6.1" data-path="other/bdd.html">
+        <li class="chapter active" data-level="6.1" data-path="other/bdd.html">
             
                 
                     <a href="../other/bdd.html">
@@ -472,22 +472,26 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h3 id="unit-test-framework-in-java">Unit test framework in java</h3>
-<h5 id="basic">Basic</h5>
-<ol>
-<li>SpryTest </li>
-<li>Jtest </li>
-<li>JUnit </li>
-<li>TestNG</li>
-</ol>
-<p><br>
-<strong>JUnit is the most popular one, nevertheless, you should try others </strong></p>
-<h5 id="more-advanced">More advanced</h5>
-<ol>
-<li>Hamcrest</li>
-<li>Mockito</li>
-</ol>
+                        <h3 id="bdd">BDD</h3>
+<p>BDD is a software engineering process based on TDD. BDD combines the best practices of TDD, domain-driven development (DDD), and object-oriented programming (OOP).</p>
+<p><strong> Example </strong></p>
+<pre><code>  context &quot;create statsion&quot; do 
+    it &quot;success&quot; do 
+      stationable_id = 12
+      stationable_type = &quot;City&quot;
+      description = &quot;aaa&quot;
+      address =&quot;bb&quot;      
+      lan = 12.03      
+      long = 12.05      
+      points = [{lantitude:13.10,longitude: 45.31},{lantitude: 34.2,longitude: 23.3}]
+      res = auth_json_post stations_path, description: description, address: address, lantitude: lan, longitude: long, points: points, stationable_id: stationable_id, stationable_type: stationable_type
 
+      expect(res[:description]).to eq(description)
+      expect(res[:lantitude]).to eq(lan)
+
+    end
+  end
+</code></pre>
                     
                     </section>
                 
@@ -497,10 +501,10 @@
         </div>
 
         
-        <a href="../how-to.html" class="navigation navigation-prev " aria-label="Previous page: How to"><i class="fa fa-angle-left"></i></a>
+        <a href="../other.html" class="navigation navigation-prev " aria-label="Previous page: Other"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../how/first-test.html" class="navigation navigation-next " aria-label="Next page: First test"><i class="fa fa-angle-right"></i></a>
+        <a href="../other/intergration.html" class="navigation navigation-next " aria-label="Next page: Integration"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
