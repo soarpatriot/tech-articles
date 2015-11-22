@@ -14,3 +14,4 @@
 
 6. Code quality 
 
+7. For life easier

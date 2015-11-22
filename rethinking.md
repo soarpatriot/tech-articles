@@ -1,15 +1,15 @@
 #Re thinking unit test
 
-J2EE not born in with test 
+1. J2EE not born in with test 
 
-Ruby unit test
+2. Ruby unit test
 
-Do it and insist on
+3. Do it and insist on
 
-For yourself and others。
-It 's a contract, a commitment.
+4. For yourself and others。
+  It 's a contract, a commitment.
 
-4s 
+5. 4s 
 
 Simplicity Stability  Speed  Satisfaction
 

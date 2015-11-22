@@ -1,12 +1,13 @@
 #Other
 
-BDD
+1. BDD
 
-Integration test
+2. Integration test
 
-Performance test
+3. Performance test
+  
+4. Regression test
 
-Regression test
+5. CI
 
-CI
 
